@@ -29,7 +29,7 @@ def dijsktra(graph, src, dest):
 
     # Dijkstra algorithm with priority queue(min-heap)
     while dest not in visited:
-        # print(min_heap)
+        # print(min_heap,visited)
         u = min_heap[0][1]
         # dis = min_heap[0][0]
         heappop(min_heap)
@@ -57,19 +57,19 @@ def dijsktra(graph, src, dest):
 
 if __name__ == "__main__":
     graph = {
-        # 'A': {'B': 2, 'C': 4},
-        # 'B': {'A': 2, 'C': 3, 'D': 8},
-        # 'C': {'A': 4, 'B': 3, 'E': 5, 'D': 2},
-        # 'D': {'B': 8, 'C': 2, 'E': 11, 'F': 22},
-        # 'E': {'C': 5, 'D': 11, 'F': 1},
-        # 'F': {'D': 22, 'E': 1}
-
         'A': {'B': 2, 'C': 4},
-        'B': {'D': 8},
-        'C': {'E': 5},
-        'D': {'F': 22},
-        'E': {'F': 1},
-        'F': {}
+        'B': {'A': 2, 'C': 1, 'D': 8},
+        'C': {'A': 4, 'B': 1, 'E': 5, 'D': 2},
+        'D': {'B': 8, 'C': 2, 'E': 11, 'F': 22},
+        'E': {'C': 5, 'D': 11, 'F': 1},
+        'F': {'D': 22, 'E': 1}
+
+        # 'A': {'B': 2, 'C': 4},
+        # 'B': {'D': 8},
+        # 'C': {'E': 5},
+        # 'D': {'F': 22},
+        # 'E': {'F': 1},
+        # 'F': {}
 
     }
     source = 'A'
